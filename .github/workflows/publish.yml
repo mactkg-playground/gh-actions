@@ -10,13 +10,13 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=version;]$(npm version patch)"
         id: info
       - run: echo ${{ steps.info.outputs.version }}
       - run: echo ${{ github.event.release.upload_url }}
-      - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
       - name: archive
