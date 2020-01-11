@@ -2,6 +2,10 @@
   "name": "gh-actions",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build:prepare": "mkdir -p build",
+    "build": "npm run build:prepare && echo hello > build/test"
+  },
   "repository": "git@github.com:mactkg-playground/gh-actions.git",
   "author": "mactkg <mactkg@gmail.com>",
   "license": "MIT"
