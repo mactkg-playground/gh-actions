@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - name: archive
-        run: zip -j gh-actions-${{ steps.info.outputs.version }} build/*
+        run: zip -j gh-actions-${{ steps.info.outputs.version }}.zip build/*
       - name: archive artifacts
         uses: actions/upload-artifact@v1
         with:
